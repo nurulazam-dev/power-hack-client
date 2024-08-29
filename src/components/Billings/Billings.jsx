@@ -1,15 +1,23 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import url from "../../assets/data/billsData.json";
-import BillingsTable from "./BillingsTable";
+// import BillingsTable from "./BillingsTable";
 
 const Billings = () => {
   const [bills, setBills] = useState([]);
+  console.log(bills);
 
-  useEffect(() => {
+  /* useEffect(() => {
     fetch(url)
       // fetch('data.json')
       .then((res) => res.json())
-      .then((data) => setBills(data));
+      .then((data) => console.log(data));
+  }, []); */
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setBills(res.data);
+    });
   }, []);
 
   return (
@@ -46,25 +54,40 @@ const Billings = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>_id</td>
-            <td>name</td>
-            <td>email</td>
-            <td>phone</td>
-            <td>amount</td>
-            <td>Delete</td>
-          </tr>
-          <tr>
-            <td>_id</td>
-            <td>name</td>
-            <td>email</td>
-            <td>phone</td>
-            <td>amount</td>
-            <td>Delete</td>
-          </tr>
-          {bills?.map((bill) => (
+          {/* {bills?.map((bill) => (
             // <Table key={bill?.index} bill={bill} setDeleteBill={setDeleteBill} />
             <BillingsTable key={bill?.index} bill={bill} />
+          ))} */}
+
+          {bills?.map((bill) => (
+            <tr key={bill?.index}>
+              <td>{bill?.index}</td>
+              <td>{bill?.name}</td>
+              <td>{bill?.email}</td>
+              <td>{bill?.phone}</td>
+              <td>{bill?.amount}</td>
+              <td className="flex justify-center">
+                <div className="mx-2">
+                  {/* <UpdateBillModal /> */}
+                  <label
+                    htmlFor="bill-update-modal"
+                    className="btn btn-outline btn-success btn-xs"
+                  >
+                    Edit
+                  </label>
+                </div>
+                <div className="mx-2">
+                  {/* <DeleteBillModal /> */}
+                  <label
+                    // onClick={() => setDeleteBill(bill)}
+                    htmlFor="bill-delete-modal"
+                    className="btn btn-outline btn-error btn-xs"
+                  >
+                    Delete
+                  </label>
+                </div>
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>
