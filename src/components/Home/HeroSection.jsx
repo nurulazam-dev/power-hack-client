@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import powerPlan from "../../assets/power-plan.jpg";
+import powerPlan from "../../assets/images/power-plan.jpg";
 
 const HeroSection = () => {
   return (

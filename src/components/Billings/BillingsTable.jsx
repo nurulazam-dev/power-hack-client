@@ -1,8 +1,9 @@
-import DeleteBillModal from "./DeleteBillModal";
-import UpdateBillModal from "./UpdateBillModal";
+import DeleteBillModal from "../DeleteBillModal";
+import UpdateBillModal from "../UpdateBillModal";
 
-const Table = ({ bill, setDeleteBill }) => {
-  const { _id, name, email, phone, amount } = bill;
+// const BillingsTable = ({ bill, setDeleteBill }) => {
+const BillingsTable = (props) => {
+  const { _id, name, email, phone, amount } = props.bill;
 
   return (
     <tr>
@@ -24,7 +25,7 @@ const Table = ({ bill, setDeleteBill }) => {
         <div className="mx-2">
           <DeleteBillModal />
           <label
-            onClick={() => setDeleteBill(bill)}
+            // onClick={() => setDeleteBill(bill)}
             htmlFor="bill-delete-modal"
             className="btn btn-outline btn-error btn-xs"
           >
@@ -36,4 +37,4 @@ const Table = ({ bill, setDeleteBill }) => {
   );
 };
 
-export default Table;
+export default BillingsTable;

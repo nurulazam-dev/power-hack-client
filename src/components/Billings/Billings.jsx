@@ -1,4 +1,17 @@
+import { useEffect, useState } from "react";
+import url from "../../assets/data/billsData.json";
+import BillingsTable from "./BillingsTable";
+
 const Billings = () => {
+  const [bills, setBills] = useState([]);
+
+  useEffect(() => {
+    fetch(url)
+      // fetch('data.json')
+      .then((res) => res.json())
+      .then((data) => setBills(data));
+  }, []);
+
   return (
     <section className="pt-6 mt-10 bg-white overflow-x-auto">
       <div className="border bg-violet-600 my-4 rounded flex justify-between w-10/12 mx-auto  px-7 py-2">
@@ -23,7 +36,7 @@ const Billings = () => {
 
       <table className="table table-compact text-center text-black w-10/12 mx-auto">
         <thead>
-          <tr>
+          <tr className="text-black font-bold text-[16px]">
             <th>Billing ID</th>
             <th>Full Name</th>
             <th>Email</th>
@@ -33,9 +46,26 @@ const Billings = () => {
           </tr>
         </thead>
         <tbody>
-          {/* {bills?.map((bill) => (
-              <Table key={bill._id} bill={bill} setDeleteBill={setDeleteBill} />
-            ))} */}
+          <tr>
+            <td>_id</td>
+            <td>name</td>
+            <td>email</td>
+            <td>phone</td>
+            <td>amount</td>
+            <td>Delete</td>
+          </tr>
+          <tr>
+            <td>_id</td>
+            <td>name</td>
+            <td>email</td>
+            <td>phone</td>
+            <td>amount</td>
+            <td>Delete</td>
+          </tr>
+          {bills?.map((bill) => (
+            // <Table key={bill?.index} bill={bill} setDeleteBill={setDeleteBill} />
+            <BillingsTable key={bill?.index} bill={bill} />
+          ))}
         </tbody>
       </table>
       {/* {deleteBill && (
