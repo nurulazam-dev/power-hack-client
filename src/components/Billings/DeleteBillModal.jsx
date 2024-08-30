@@ -14,10 +14,11 @@ const DeleteBillModal = () => {
     <div>
       <input type="checkbox" id="bill-delete-modal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box relative w-full max-w-xs">
-          <h3 className="text-lg font-bold">Delete Bill</h3>
-          <h3 className="font-bold text-red-500 text-lg">
-            Are you sure you want to delete {name}
+        <div className="modal-box relative w-full max-w-xs bg-white">
+          <h3 className="text-xl mb-2 font-bold text-red-600">Delete Bill</h3>
+          <h3 className="font-bold text-violet-500 text-[16px]">
+            Are you sure you want to delete{" "}
+            <strong className="text-black">{name} `--- no bill`</strong>
           </h3>
           <div className="modal-action">
             <label

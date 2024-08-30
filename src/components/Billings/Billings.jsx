@@ -30,7 +30,7 @@ const Billings = () => {
           <input
             type="text"
             placeholder="Search"
-            className="input bg-white input-bordered mx-3 w-full max-w-xs"
+            className="input bg-white input-bordered text-black mx-3 w-full max-w-xs"
           />
         </div>
         <div className="">

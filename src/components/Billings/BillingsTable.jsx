@@ -1,5 +1,5 @@
-import DeleteBillModal from "../DeleteBillModal";
-import UpdateBillModal from "../UpdateBillModal";
+import DeleteBillModal from "./DeleteBillModal";
+import UpdateBillModal from "./UpdateBillModal";
 
 // const BillingsTable = ({ bill, setDeleteBill }) => {
 const BillingsTable = (props) => {
