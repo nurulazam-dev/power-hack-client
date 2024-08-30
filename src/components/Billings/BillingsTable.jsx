@@ -3,15 +3,16 @@ import UpdateBillModal from "../UpdateBillModal";
 
 // const BillingsTable = ({ bill, setDeleteBill }) => {
 const BillingsTable = (props) => {
-  const { _id, name, email, phone, amount } = props.bill;
-
+  console.log(props.bill);
+  const data = props.bill;
   return (
     <tr>
-      <td>{_id}</td>
-      <td>{name}</td>
-      <td>{email}</td>
-      <td>{phone}</td>
-      <td>{amount}</td>
+      <td>{data.id}</td>
+      <td>{data.name}</td>
+      <td>{data.email}</td>
+      <td>{data.phone}</td>
+      <td>{data?.username}</td>
+      {/* <td>{data.amount}</td> */}
       <td className="flex justify-center">
         <div className="mx-2">
           <UpdateBillModal />

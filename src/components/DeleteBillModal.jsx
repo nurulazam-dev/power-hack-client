@@ -1,13 +1,14 @@
-const DeleteBillModal = ({ deleteBill, setDeleteBill }) => {
-  const { _id, name } = deleteBill;
+const DeleteBillModal = () => {
+  // const DeleteBillModal = ({ deleteBill, setDeleteBill }) => {
+  // const { _id, name } = deleteBill;
 
-  const handleConfirm = () => {
+  /* const handleConfirm = () => {
     fetch(`https://localhost:5000/api/billing-list/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
-  };
+  }; */
 
   return (
     <div>
@@ -22,7 +23,7 @@ const DeleteBillModal = ({ deleteBill, setDeleteBill }) => {
             <label
               htmlFor="bill-delete-modal"
               className="btn btn-error btn-xs"
-              onClick={() => handleConfirm}
+              // onClick={() => handleConfirm}
             >
               Confirm
             </label>

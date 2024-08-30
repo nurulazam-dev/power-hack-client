@@ -21,17 +21,17 @@ const AddBillModal = () => {
   };
 
   return (
-    <div>
-      <input type="checkbox" id="bill-add-modal" className="modal-toggle" />
+    <div className="">
+      <input type="checkbox" id="bill-add-modal" className="modal-toggle " />
       <div className="modal">
-        <div className="modal-box relative w-full max-w-xs">
+        <div className="modal-box relative w-full max-w-xs bg-violet-700">
           <label
             htmlFor="bill-add-modal"
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold">Add New Bill</h3>
+          <h3 className="text-2xl text-center font-bold">Add New Bill</h3>
           <form onSubmit={handleBillAdd}>
             <input
               name="name"
@@ -39,7 +39,7 @@ const AddBillModal = () => {
               placeholder="Full Name"
               onChange={handleChange}
               value={data.name}
-              className="input input-bordered w-full max-w-xs mt-4"
+              className="input outline-none w-full max-w-xs mt-4 bg-white"
               required
             />
             <input
@@ -48,7 +48,7 @@ const AddBillModal = () => {
               placeholder="Email Address"
               onChange={handleChange}
               value={data.email}
-              className="input input-bordered w-full max-w-xs mt-3"
+              className="input outline-none w-full max-w-xs mt-4 bg-white"
               required
             />
             <input
@@ -57,7 +57,7 @@ const AddBillModal = () => {
               placeholder="Phone Number"
               onChange={handleChange}
               value={data.phone}
-              className="input input-bordered w-full max-w-xs mt-3"
+              className="input outline-none w-full max-w-xs mt-4 bg-white"
               required
             />
             <input
@@ -66,13 +66,13 @@ const AddBillModal = () => {
               onChange={handleChange}
               value={data.amount}
               placeholder="Paid Amount"
-              className="input input-bordered w-full max-w-xs mt-3"
+              className="input outline-none w-full max-w-xs mt-4 bg-white"
               required
             />
             <input
               type="submit"
               value="Bill Add"
-              className="btn w-full max-w-xs mt-3"
+              className="btn w-full border-none text-[15px] text-white hover:text-black max-w-xs mt-3 bg-green-600 hover:bg-orange-600"
             />
           </form>
         </div>
